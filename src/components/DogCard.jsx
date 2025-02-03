@@ -1,22 +1,28 @@
-const DogCard = () => {
+/* eslint-disable react/prop-types */
+import { Card, CardFooter, Image, Button } from "@heroui/react";
+
+const DogCard = ({ item }) => {
     return (
-        <div className="card bg-slate-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
-                <img
-                    src="https://images.dog.ceo/breeds/terrier-dandie/n02096437_1605.jpg"
-                    alt="Judging Dog"
-                    className="rounded-xl"
-                />
-            </figure>
-            <div className="card-body items-center text-center">
-                <h2 className="card-title">Judgy Dog!</h2>
-                <p>Why you looking at me?</p>
-                <div className="card-actions">
-                    {/* button here */}
-                    {/* <button className="btn btn-primary">Buy Now</button> */}
+        <Card isFooterBlurred className="border-none" radius="lg">
+            <Image
+                alt="Judging Dog"
+                className="object-cover w-full"
+                src={item.image_link}
+            />
+            <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+                <div>
+                    <p className="text-black text-tiny">{item.name}</p>
+                    <p className="text-black text-tiny">{item.name}.</p>
                 </div>
-            </div>
-        </div>
+                <Button
+                    className="text-tiny bg-orange-400"
+                    radius="full"
+                    size="sm"
+                >
+                    Explore More
+                </Button>
+            </CardFooter>
+        </Card>
     );
 };
 
