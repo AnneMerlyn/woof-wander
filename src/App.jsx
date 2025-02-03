@@ -1,14 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import DogExplorer from "./components/DogExplorer";
-import DogStatus from "./components/DogStatus";
-import MainLayout from "./components/MainLayout";
+import { BrowserRouter, Routes, Route } from "react-router";
+import DogStatus from "./pages/DogStatus";
 import "./styles.css";
+import DogExplorer from "./pages/DogExplorer";
+import { MainLayout } from "./layout/MainLayout";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={<MainLayout />}>
+                <Route path="/" element={<MainLayout />}>
                     <Route index element={<DogExplorer />} />
                     <Route path="dogstatus" element={<DogStatus />} />
                 </Route>
